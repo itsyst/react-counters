@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 
 export default class Counter extends Component {
 	state = {
@@ -8,8 +8,8 @@ export default class Counter extends Component {
 			{ id: 2, name: 'tag2' },
 			{ id: 3, name: 'tag3' }
 		]
-    };
-    
+	};
+
 	// styles = {
 	//     fontSize: 50,
 	//     fontWeight: "bold",
@@ -23,13 +23,13 @@ export default class Counter extends Component {
 	renderTags() {
 		if (this.state.tags.length === 0) return <h1>There are no tags!</h1>;
 		return this.state.tags.map((tag) => <li key={tag.id}>{tag.name}</li>);
-    }
-    
-    handleIncrement = (product) => {
-        console.log(product);
+	}
+
+	handleIncrement = (product) => {
+		console.log(product);
 		this.setState({ count: this.state.count + 1 });
-    };
-    
+	};
+
 	render() {
 		return (
 			<>
@@ -44,11 +44,11 @@ export default class Counter extends Component {
 				>
 					Increment
 				</button>
-				<ul>
+				<p>
 					{this.state.tags.length === 0 && 'There are no tags!'}
 					{/* {this.state.tags.length === 0 && this.renderTags()'} */}
-					{this.renderTags()}
-				</ul>
+					{/* {this.renderTags()} */}
+				</p>
 			</>
 		);
 	}
