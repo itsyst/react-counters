@@ -4,11 +4,12 @@ export default class Counter extends Component {
 	state = {
 		count: 0,
 		tags: [
-			// { id: 1, name: 'tag1' },
-			// { id: 2, name: 'tag2' },
-			// { id: 3, name: 'tag3' }
+			{ id: 1, name: 'tag1' },
+			{ id: 2, name: 'tag2' },
+			{ id: 3, name: 'tag3' }
 		]
-	};
+    };
+    
 	// styles = {
 	//     fontSize: 50,
 	//     fontWeight: "bold",
@@ -22,10 +23,13 @@ export default class Counter extends Component {
 	renderTags() {
 		if (this.state.tags.length === 0) return <h1>There are no tags!</h1>;
 		return this.state.tags.map((tag) => <li key={tag.id}>{tag.name}</li>);
-	}
-	handleIncrement = () => {
+    }
+    
+    handleIncrement = (product) => {
+        console.log(product);
 		this.setState({ count: this.state.count + 1 });
-	};
+    };
+    
 	render() {
 		return (
 			<>
@@ -35,7 +39,7 @@ export default class Counter extends Component {
 					{this.formatCount()}
 				</span>
 				<button
-					onClick={this.handleIncrement}
+					onClick={() => this.handleIncrement(this.state.count)}
 					className="btn btn-secondary btn-sm"
 				>
 					Increment
