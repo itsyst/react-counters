@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 export default class Counter extends Component {
 	state = {
@@ -13,10 +13,19 @@ export default class Counter extends Component {
 	//     fontSize: 50,
 	//     fontWeight: "bold",
 	// };
+
+	// constructor() {
+	// 	super();
+	//     this.handleIncrement = this.handleIncrement.bind(this);
+	// }
+
 	renderTags() {
 		if (this.state.tags.length === 0) return <h1>There are no tags!</h1>;
 		return this.state.tags.map((tag) => <li key={tag.id}>{tag.name}</li>);
 	}
+	handleIncrement = () => {
+		this.setState({ count: this.state.count + 1 });
+	};
 	render() {
 		return (
 			<>
@@ -25,9 +34,15 @@ export default class Counter extends Component {
 				>
 					{this.formatCount()}
 				</span>
-				<button className="btn btn-secondary btn-sm">Increment</button>
+				<button
+					onClick={this.handleIncrement}
+					className="btn btn-secondary btn-sm"
+				>
+					Increment
+				</button>
 				<ul>
 					{this.state.tags.length === 0 && 'There are no tags!'}
+					{/* {this.state.tags.length === 0 && this.renderTags()'} */}
 					{this.renderTags()}
 				</ul>
 			</>
