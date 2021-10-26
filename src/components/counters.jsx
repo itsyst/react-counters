@@ -4,10 +4,10 @@ import Counter from '../components/counter';
 export default class Counters extends Component {
 	state = {
 		counters: [
-			{ id: 0, value: 0 },
-			{ id: 1, value: 0 },
-			{ id: 2, value: 0 },
-			{ id: 3, value: 0 }
+			{ id: 0, value: 4, status: true },
+			{ id: 1, value: 7, status: true },
+			{ id: 2, value: 0, status: true },
+			{ id: 3, value: 0, status: true }
 		]
 	};
 
@@ -15,7 +15,11 @@ export default class Counters extends Component {
 		return (
 			<>
 				{this.state.counters.map((counter) => (
-					<Counter key={counter.id} />
+					<Counter
+						key={counter.id}
+						value={counter.value}
+						selected={counter.status}
+					/>
 				))}
 			</>
 		);
