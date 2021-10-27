@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Counter extends Component {
 	state = {
-		value: this.props.value,
+		value: this.props.counter.value,
 		tags: [
 			{ id: 1, name: 'tag1' },
 			{ id: 2, name: 'tag2' },
@@ -26,33 +26,39 @@ export default class Counter extends Component {
 	}
 
 	handleIncrement = (product) => {
-		console.log(product);
+		//console.log(product);
 		this.setState({ value: this.state.value + 1 });
 	};
 
 	render() {
 	    console.log(this.props); //using the children props
 		return (
-			<>
-			    {/* <span>{ this.props.children}</span> */}
-				{/* <h4>{ this.props.id}</h4> */} 
+			<div>
+				{/* <span>{ this.props.children}</span> */}
+				{/* <h4>{ this.props.id}</h4> */}
 				<span
 					/*style ={{fontSize:30}}*/ className={this.getBadgeClasses()}
 				>
 					{this.formatCount()}
 				</span>
 				<button
-					onClick={() => this.handleIncrement(this.state.value)}
+					onClick={this.handleIncrement}
 					className="btn btn-secondary btn-sm"
 				>
 					Increment
+				</button>
+				<button
+					onClick={() =>this.props.onDelete(this.props.counter.id)}
+					className="btn btn-danger btn-sm m-2 "
+				>
+					delete
 				</button>
 				<p>
 					{this.state.tags.length === 0 && 'There are no tags!'}
 					{/* {this.state.tags.length === 0 && this.renderTags()'} */}
 					{/* {this.renderTags()} */}
 				</p>
-			</>
+			</div>
 		);
 	}
 
