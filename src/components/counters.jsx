@@ -19,7 +19,10 @@ export default class Counters extends Component {
 						key={counter.id}
 						value={counter.value}
 						selected={counter.status}
-					/>
+						id={counter.id}
+					>
+						<h4>Counter #{counter.id}</h4>
+					</Counter>
 				))}
 			</>
 		);

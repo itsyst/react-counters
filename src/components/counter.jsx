@@ -31,8 +31,11 @@ export default class Counter extends Component {
 	};
 
 	render() {
+	    console.log(this.props); //using the children props
 		return (
 			<>
+			    {/* <span>{ this.props.children}</span> */}
+				{/* <h4>{ this.props.id}</h4> */} 
 				<span
 					/*style ={{fontSize:30}}*/ className={this.getBadgeClasses()}
 				>
