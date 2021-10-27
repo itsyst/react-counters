@@ -30,6 +30,14 @@ export default class Counter extends Component {
 	// 	this.setState({ value: this.state.value + 1 });
 	// };
 
+	componentDidUpdate(prevProps, prevState) {
+		console.log('prevProps', prevProps);
+		console.log('prevState', prevState);
+		if (prevProps.counter.value !== this.props.counter.value) {
+			//Ajax Cal from the server
+		}
+	}
+
 	render() {
 		console.log('Counter - Rendered');
 
