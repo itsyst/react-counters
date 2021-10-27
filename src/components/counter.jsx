@@ -45,7 +45,7 @@ export default class Counter extends Component {
 					onClick={() => this.props.onIncrement(this.props.counter)}
 					className="btn btn-secondary btn-sm"
 				>
-					Increment
+					+
 				</button>
 				<button
 					onClick={() => this.props.onDelete(this.props.counter.id)}
@@ -53,11 +53,11 @@ export default class Counter extends Component {
 				>
 					delete
 				</button>
-				{/* <p>
+				<p>
 					{this.props.tags.length === 0 && 'There are no tags!'}
 					{/* {this.state.tags.length === 0 && this.renderTags()'} */}
-				{/* {this.renderTags()} }
-				</p> */}
+					{/* {this.renderTags()}*/}
+				</p>
 			</div>
 		);
 	}
