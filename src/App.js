@@ -16,6 +16,19 @@ class App extends Component {
     ]
   };
 
+  // Called only once when the instance of class is created
+  constructor(props) {
+    super(props);
+    console.log('App - constructor', this.props);
+    // this.state = this.props.something; // set the state directly do not use setState here
+  }
+
+  componentDidMount() {
+    // Ajax call to get data from the server;
+    //this.setState({something})
+    console.log('App - Mounted');
+  }
+
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0;
@@ -41,6 +54,7 @@ class App extends Component {
   };
 
   render() {
+    console.log('App - Rendered')
     return (
       <>
         <Navbar totalCounters={this.state.counters.filter(c => c.value > 0).length} />

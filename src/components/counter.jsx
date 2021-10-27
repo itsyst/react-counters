@@ -31,6 +31,8 @@ export default class Counter extends Component {
 	// };
 
 	render() {
+		console.log('Counter - Rendered');
+
 		//console.log(this.props.counter); //using the children props
 		return (
 			<div>
