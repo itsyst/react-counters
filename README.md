@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+## Counter Management 🧮
+ 
+This project provides a simple web application for managing counters with associated tags. Users can increment, decrement, delete counters, and view related tags for each counter. The application uses React for the frontend and TypeScript for type safety.
+Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Increment and decrement counters.
+Delete counters.
+View and manage tags associated with each counter.
+Reset counters to their initial state.
+Responsive and user-friendly interface.
 
-Currently, two official plugins are available:
+### Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend: React
+State Management: React Hooks (useState)
+TypeScript: Ensures type safety and robust code.
+CSS: Styling with Bootstrap
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clone the repository:
+    
+    git clone https://github.com/your-username/counter-management.git
+    cd counter-management
 
-- Configure the top-level `parserOptions` property like this:
+### Install dependencies:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    npm start
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Usage
+
+Use the buttons to increment, decrement, delete, and reset counters.
+View and manage tags associated with each counter through the provided UI.
+
+### Contributing
+
+Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request.
+License
+ 
