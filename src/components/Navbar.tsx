@@ -1,7 +1,8 @@
-import React from 'react';
+interface NavbarProps {
+	totalCounters: number;
+}
 
-// Stateless functional component
-const Navbar = ({ totalCounters }) => {
+const Navbar = ({ totalCounters }: NavbarProps) => {
 	console.log('Navbar - Rendered');
 
 	return (
@@ -9,9 +10,7 @@ const Navbar = ({ totalCounters }) => {
 			<div className="container">
 				<span className="navbar-brand mb-0 h1">
 					Counters
-					<span className="badge rounded-pill bg-secondary  mx-3 ">
-						{totalCounters}
-					</span>
+					<span className="badge rounded-pill bg-secondary  mx-3 ">{totalCounters}</span>
 				</span>
 			</div>
 		</nav>
